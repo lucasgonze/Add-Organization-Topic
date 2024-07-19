@@ -20,7 +20,7 @@ def enable_logging():
 
 def get_request_headers():
   token = os.environ['GITHUB_TOKEN']
-  # fixme: exception if not set ^
+  # future: exception if not set ^
   request_headers = {
     "Accept": "application/vnd.github+json",
     "Authorization": "Bearer "+token,
@@ -57,10 +57,6 @@ def add_label(org,repo,label):
 def list_repos(org):
 
   request_headers = get_request_headers()
-
-  # does not work. fix later.
-  # request_headers["per_page"] = "100"  
-  #print(request_headers)
 
   repos = []
   page = 1
