@@ -30,6 +30,7 @@ def get_request_headers():
 
 def add_label(org,repo,label):
 
+  # future: get a list of links from an API rather than do URL construction
   resource = "https://api.github.com/repos/"+org+"/"+repo+"/topics"
 
   #*** Get current state of labels
@@ -61,6 +62,7 @@ def list_repos(org):
   repos = []
   page = 1
 
+  # future: get a list of links from an API rather than do URL construction
   page_link = "https://api.github.com/orgs/"+org+"/"+"repos?page="+str(page)+"&per_page=100"
   while True:
     print("Fetching "+page_link)
